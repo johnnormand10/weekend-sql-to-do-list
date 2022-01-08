@@ -27,7 +27,7 @@ function clickListeners(){
 
     //function for toggling complete
     $(document).on('click', '.changeComp', toggleComp);
-    $(document).on('click', '.changeComp', changeColor);
+    /* $(document).on('click', '.changeComp', changeColor); */
 }
 
 function changeColor(){
@@ -58,7 +58,7 @@ function changeColor(){
 function toggleComp(){
     console.log('toggleComp');
     
-    let taskId = $(this).parents("td").data("id");
+    let taskId = $(this).parents("tr").data("id");
     let taskChange = $(this).parents("tr").data("complete");
 
     $.ajax({
@@ -92,6 +92,14 @@ function deleteTask(){
     })
     .then((res) => {
         console.log('DELETE success');
+
+        //sweetAlert
+        sweetAlert({
+            title: "Delete Task",
+            text: "This task has been deleted!",
+            icon: "success",
+            buttons: true,
+        })
         getTask();
     })
     .catch((err) => {
@@ -136,8 +144,10 @@ function renderTask(response){
                     <td>${response[i].notes}</td>
                     <td data-id = ${response[i].id}>
                         ${response[i].complete}
+                    </td>
+                    <td>
                         <button class = "changeComp">
-                        Toggle
+                        Complete Task
                         </button>
                     </td>
                     <td>
@@ -147,6 +157,12 @@ function renderTask(response){
                     </td>
                 </tr>
             `);
+        }
+        if(response[i].complete){
+            $(`${response[i].id}`).addClass('green')
+        }
+        else{
+            $(`${response[i].id}`)
         }
     }
     

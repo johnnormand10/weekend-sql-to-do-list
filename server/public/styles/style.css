@@ -1,20 +1,34 @@
 body{
-    background: url(https://cdn.wallpapersafari.com/66/84/otpbm5.png) no-repeat center center fixed;
+    background: url(https://i.pinimg.com/originals/7d/14/18/7d14184829c4719e9d0372fa6b34dd79.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    color: white;
 }
 
 header{
     text-align: center;
-    border: 3px ridge black;   
-}
-
-h2{
     text-decoration: underline;
-}
-#addTask{
-    text-align: center;
     margin-top: 2rem;
 }
+
+#addTask{
+    text-align: center;
+    margin-top: 5rem;
+}
+
+input{
+    margin-top: 5px;
+}
+
+#tableTop{
+    text-decoration: underline;
+}
+
+#taskTable{
+    color: white;
+    backdrop-filter: blur(2px);
+    margin-top: 5rem;
+}
+
