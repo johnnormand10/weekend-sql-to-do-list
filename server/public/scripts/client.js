@@ -27,6 +27,31 @@ function clickListeners(){
 
     //function for toggling complete
     $(document).on('click', '.changeComp', toggleComp);
+    $(document).on('click', '.changeComp', changeColor);
+}
+
+function changeColor(){
+    let taskChange = $(this).parents("tr").data("complete");
+    let taskId = $(this).parents("tr").data("id");
+
+    console.log(taskChange);
+    console.log(taskId);
+
+    let greenStyle = {
+        backgroundColor: "green"
+    };
+
+    let grayStyle = {
+        backgroundColor: "gray"
+    };
+    
+    
+    if( taskChange === false){
+        $(taskId).css(greenStyle);
+    }
+    else if ( taskChange === true){
+        $(taskId).css(grayStyle);
+    }
 }
 
 //toggle complete
@@ -145,7 +170,8 @@ function saveTask(){
     .then(function (response){
         //clear the inputs
         $("#taskIn").val(" "),
-        $("#notesIn").val(" ");
+        $("#notesIn").val(" "),
+        $("#complete").val(" ");
 
         getTask();
     });

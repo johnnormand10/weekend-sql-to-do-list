@@ -16,10 +16,10 @@
     [π] Postico database "weekend-to-do-app"
         [π] Postico table "to_do"
 [ ] Task
-    [ ] When created refresh to show all
-    [ ] When complete 'Complete' or 'Delete' option
+    [π] When created refresh to show all
+    [π] When complete 'Complete' or 'Delete' option
         [ ] When complete background changes from gray to green
             [ ] gray 
             [ ] green
-    [ ] Task should always be stored in database
-    [ ] When deleted should be removed from database
+    [π] Task should always be stored in database
+    [π] When deleted should be removed from database

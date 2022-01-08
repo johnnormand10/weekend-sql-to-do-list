@@ -1,0 +1,20 @@
+body{
+    background: url(https://cdn.wallpapersafari.com/66/84/otpbm5.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+header{
+    text-align: center;
+    border: 3px ridge black;   
+}
+
+h2{
+    text-decoration: underline;
+}
+#addTask{
+    text-align: center;
+    margin-top: 2rem;
+}
