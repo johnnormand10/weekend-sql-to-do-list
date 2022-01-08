@@ -1,13 +1,13 @@
 ## TO-DO
 
-[ ] Front-end Experience
-[ ] Server folder
-    [ ] Public Folder
+[π] Front-end Experience
+[π] Server folder
+    [π] Public Folder
         [π] HTML
             [π] wire-frame
             [π] mock-up
-        [ ] CSS
-            [ ] style.css
+        [π] CSS
+            [π] style.css
         [π] JS
             [π] server.js
             [π] client.js
@@ -15,11 +15,19 @@
 [π] Database
     [π] Postico database "weekend-to-do-app"
         [π] Postico table "to_do"
-[ ] Task
-    [ ] When created refresh to show all
-    [ ] When complete 'Complete' or 'Delete' option
-        [ ] When complete background changes from gray to green
-            [ ] gray 
-            [ ] green
-    [ ] Task should always be stored in database
-    [ ] When deleted should be removed from database
+[π] Task
+    [π] When created refresh to show all
+    [π] When complete 'Complete' or 'Delete' option
+        [π] When complete background changes from false to true
+            [π] true
+            [π] false
+            [π] allow for toggle in case task was not completed up to standards
+    [π] Task should always be stored in database
+    [π] When deleted should be removed from database
+
+[ ]Bootstrap
+    [π] table style
+    [ ] input style
+    [π] responsive page
+
+
