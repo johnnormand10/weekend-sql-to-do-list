@@ -11,8 +11,17 @@ $(document).ready(function () {
 });//end document ready
 
 function clickListeners(){
-    console.log('in clickListeners');
+    $("#addButton").on('click', function() {
+        console.log('in clickListeners');
+
+        let newTask = {
+            task: "testTask",
+            notes: "testTask",
+            complete: "testComplete",
+        };
     
+    saveTask(newTask);
+    });
     //function for deleting
     $(document).on('click', '.deleteBtn', deleteTask);
 
@@ -94,24 +103,26 @@ function renderTask(response){
     console.log(response);
 
     //looping
-    for(let task of response){
-        $("viewTask").append(`
-            <tr data-id = ${task.id} data-complete = ${task.complete}>
-                <td>${task.task}</td>
-                <td>${task.notes}</td>
-                <td data-id = ${task.id}>
-                    ${task.complete}
-                    <button class = "changeComp">
-                    Toggle
-                    </button>
-                </td>
-                <td>
-                    <button class = "deleteBtn">
-                        Delete
-                    </button>
-                </td>
-            </tr>
-        `);
+    for(let i = 0; i < response.length; i++){
+        if(`${response[i].complete} === false`){
+            $("#viewTask").append(`
+                <tr data-id = ${response[i].id} data-complete = ${response[i].complete}>
+                    <td>${response[i].task}</td>
+                    <td>${response[i].notes}</td>
+                    <td data-id = ${response[i].id}>
+                        ${response[i].complete}
+                        <button class = "changeComp">
+                        Toggle
+                        </button>
+                    </td>
+                    <td>
+                        <button class = "deleteBtn">
+                            Delete
+                        </button>
+                    </td>
+                </tr>
+            `);
+        }
     }
     
 }
@@ -122,7 +133,8 @@ function saveTask(){
 
     let taskObject = {
         task: $("#taskIn").val(),
-        notes: $("#notesIn").val()
+        notes: $("#notesIn").val(),
+        complete: $("#complete").val()
     };
 
     $.ajax({
